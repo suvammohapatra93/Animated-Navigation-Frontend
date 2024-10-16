@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Improved Animated 9 Dots Navigation Menu</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle">Toggle Theme</button>
+
+    <!-- Navigation Menu Container -->
+    <ul class="menu">
+      <li class="toggleBtn"><ion-icon name="add-outline"></ion-icon></li>
+
+      <!-- Menu Navigation Items with Tooltips -->
+      <li style="--x: 0; --y: -2; --clr: #ff2972" data-tooltip="Home">
+        <a href="#"><ion-icon name="home-outline"></ion-icon></a>
+      </li>
+      <li style="--x: 1.5; --y: -1.5; --clr: #fee800" data-tooltip="Profile">
+        <a href="#"><ion-icon name="person-outline"></ion-icon></a>
+      </li>
+      <li style="--x: 2; --y: 0; --clr: #04fc43" data-tooltip="Security">
+        <a href="#"><ion-icon name="key-outline"></ion-icon></a>
+      </li>
+      <li style="--x: 1.5; --y: 1.5; --clr: #fe00f1" data-tooltip="Settings">
+        <a href="#"><ion-icon name="settings-outline"></ion-icon></a>
+      </li>
+      <li style="--x: 0; --y: 2; --clr: #00b0fe" data-tooltip="Games">
+        <a href="#"><ion-icon name="game-controller-outline"></ion-icon></a>
+      </li>
+      <li style="--x: -1.5; --y: 1.5; --clr: #fea600" data-tooltip="Camera">
+        <a href="#"><ion-icon name="camera-outline"></ion-icon></a>
+      </li>
+      <li style="--x: -2; --y: 0; --clr: #a529ff" data-tooltip="Mail">
+        <a href="#"><ion-icon name="mail-outline"></ion-icon></a>
+      </li>
+      <li style="--x: -1.5; --y: -1.5; --clr: #01bdab" data-tooltip="Videos">
+        <a href="#"><ion-icon name="videocam-outline"></ion-icon></a>
+      </li>
+    </ul>
+
+    <!-- Include Ionicons for Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- Custom JavaScript File -->
+    <script src="script.js"></script>
+  </body>
+</html>

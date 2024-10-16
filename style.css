@@ -1,0 +1,151 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--background-color);
+  transition: background 0.5s;
+}
+
+/* Define Color Variables for Dark and Light Themes */
+:root {
+  --background-color: #2f363e;
+  --tooltip-background: #fff;
+  --tooltip-text: #333;
+}
+
+/* Light Theme Variables */
+body.light-theme {
+  --background-color: #f4f4f4;
+  --tooltip-background: #333;
+  --tooltip-text: #fff;
+}
+
+/* Menu Container */
+.menu {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* List Items */
+.menu li {
+  position: absolute;
+  list-style: none;
+  width: 60px;
+  height: 60px;
+  background: #282c34;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(calc(var(--x) * 60px), calc(var(--y) * 60px));
+  transition: transform 0.5s, background 0.5s, box-shadow 0.5s;
+}
+
+/* Active State Transformation */
+.menu.active li {
+  transform: translate(calc(var(--x) * 80px), calc(var(--y) * 80px));
+}
+
+/* Tooltip Styling */
+.menu li[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -35px;
+  background: var(--tooltip-background);
+  color: var(--tooltip-text);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+
+/* Icon Styling */
+.menu li ion-icon {
+  font-size: 2.5em;
+  color: var(--clr);
+  transition: transform 0.5s, color 0.5s;
+}
+
+/* Icon Scaling Effect */
+.menu.active li ion-icon {
+  transform: scale(1.1);
+}
+
+/* Toggle Button Styling */
+.menu .toggleBtn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ffffff10;
+  border: 3px solid #ffffff70;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 2.5em;
+  color: #fff;
+  transition: background 0.5s, color 0.5s, transform 0.5s;
+}
+
+/* Toggle Button Animation when Active */
+.menu.active .toggleBtn {
+  background: #04fc43;
+  color: #333;
+  transform: rotate(315deg);
+}
+
+/* Theme Toggle Button Styling */
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: #04fc43;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Hover Effect */
+.menu li:hover,
+.menu .toggleBtn:hover {
+  background: var(--clr);
+  box-shadow: 0 0 15px var(--clr), 0 0 30px var(--clr);
+}
+
+/* Hover Effect on Icons */
+.menu li:hover ion-icon {
+  color: #333;
+}
+
+/* Center Circle Animation */
+.menu .toggleBtn::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #ffffff70;
+  transition: 0.5s;
+}
+
+.menu.active .toggleBtn::before {
+  background: transparent;
+  border: 3px solid #04fc43;
+}
